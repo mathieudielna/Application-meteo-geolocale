@@ -2,7 +2,7 @@ let villeChoisie;
 
 if ("geolocation" in navigator) {
   navigator.geolocation.watchPosition((position) => {
-    const url = 'https://api.openweathermap.org/data/2.5/weather?lon=' + position.coords.longitude + '&lat=' + position.coords.latitude + '&appid=dc7f65cfc963a0105bb137a39b73dbf4&units=metric';
+    const url = 'https://api.openweathermap.org/data/2.5/weather?lon=' + position.coords.longitude + '&lat=' + position.coords.latitude + '&appid=${ API_KEY }&units=metric';
     console.log(url);
 
   let requete = new XMLHttpRequest(); // Nous créons un objet qui nous permettra de faire des requêtes
@@ -50,7 +50,7 @@ function erreur() {
 }
 
 function recevoirTemperature(ville) {
-  const url = 'https://api.openweathermap.org/data/2.5/weather?q=' + ville + '&appid=dc8c9152e8adaad0ec8bf635818c0d42&units=metric';
+  const url = 'https://api.openweathermap.org/data/2.5/weather?q=' + ville + '&appid=${ API_KEY }&units=metric';
 
   let requete = new XMLHttpRequest(); // Nous créons un objet qui nous permettra de faire des requêtes
   requete.open('GET', url); // Nous récupérons juste des données
